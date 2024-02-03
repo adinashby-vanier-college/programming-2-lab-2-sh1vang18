@@ -8,11 +8,13 @@ public class Account {
 	/**
 	 * i) Define three instance variables called accountNumber, name and amount.
 	 */
-	
+	private int accountNumber;
+        private String name;
+        private double amount;
 	/**
 	 * ii) Define one static variable called numberOfAccounts.
 	 */
-	
+	private static int numberOfAccounts;
 	/**
 	 * Write your test code below in the main (optional).
 	 */
@@ -24,18 +26,51 @@ public class Account {
 	/**
 	 * iii) A default constructor.
 	 */
-	
+            public Account() {
+         // numberOfAccounts++;
+        }
 	/**
 	 * iv) A constructor that takes all the parameters and initializes them 
 	 */
 	
 	public Account(int accountNumber, String name, double amount) {
 		
+            this.accountNumber = accountNumber;
+              this.name = name;
+             this.amount = amount;
+                //numberOfAccounts++;
 	}
 	
 	/**
 	 * v) Getters and setters (accessors and mutators).
+     * @return 
 	 */
+         public int getAccountNumber() {
+            return accountNumber;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getAmount() {
+            return amount;
+        }
+
+        public static int getNumberOfAccounts() {
+            return numberOfAccounts;
+        }
+        public void setAccountNumber(int accountNumber) {
+            this.accountNumber = accountNumber;
+}
+
+        public void setName(String name) {
+            this.name = name;
+}
+
+        public void setAmount(double amount) {
+            this.amount = amount;
+}
 	
 	/**
 	 * vi) Adds the parameter value to the amount field.
@@ -45,7 +80,8 @@ public class Account {
 	 * @return result new value.
 	 */
 	public double deposit(double amountToBeDeposited) {
-		return 0.0;
+            amount += amountToBeDeposited;
+		return amount;
 	}
 	
 	/**
@@ -56,7 +92,8 @@ public class Account {
 	 * @return result new value.
 	 */
 	public double withdraw(double amountToBeWithdrawn) {
-		return 0.0;
+            amount -= amountToBeWithdrawn;
+		return amount;
 	}
 	
 	/**
@@ -65,7 +102,8 @@ public class Account {
 	 * @return result new value.
 	 */
 	public double calculateInterest() {
-		return 0.0;
+            amount += (amount * 0.02);
+		return amount;
 	}
 	
 	/**
@@ -74,7 +112,7 @@ public class Account {
 	 * @return result the string containing the values.
 	 */
 	public String toString() {
-		return "";
+		return accountNumber + name + amount;
 	}
 	
 	/**
